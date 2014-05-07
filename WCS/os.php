@@ -3,14 +3,14 @@
 namespace WebIS;
 
 class OS {
-	static $DEBUG=FALSE;
+	static $DEBUG=TRUE; // False if you want to delete the OSIL and OSRL Files
 	static $solver="\\WebIS\\bin\OSSolverService.exe";
 	static $tmp="\\WebIS\\tmp\\"; // trailing slash required.
 
 	private $osil=NULL;
 	private $osrl=NULL;
 	private $var=array(); // Reverse IDX mapping ($idx->$name).
-	private $value=NULL;  // Solution value.
+	public $value=NULL;  // Solution value.
 
 	private $linear=FALSE;
 	
@@ -100,8 +100,8 @@ class OS {
 	}
 	
 	function solve(){
-		$osilfile=tempnam(OS::$solver,'OS-');
-		$osrlfile=tempnam(OS::$solver,'OS-');
+		$osilfile=tempnam(OS::$tmp,'OS-');
+		$osrlfile=tempnam(OS::$tmp,'OS-');
 		if(self::$DEBUG){
 			$osilfile='osil.xml';
 			$osrlfile='osrl.xml';

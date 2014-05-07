@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://www.coin-or.org/OS/stylesheets/OSrL.xslt"?>
+<osrl xmlns="os.optimizationservices.org"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="os.optimizationservices.org http://www.optimizationservices.org/schemas/2.0/OSrL.xsd" >
+<general>
+<generalStatus type="normal">
+</generalStatus>
+<serviceName>
+
+Optimization Services Solver
+Main Authors: Horand Gassmann, Jun Ma, and Kipp Martin
+Distributed under the Eclipse Public License
+OS Version: 2.4.1
+Build Date: Nov 16 2011
+SVN Version: 4392
+
+</serviceName>
+<instanceName>EBE3404-PC-13 2014-05-07T18:15:57+02:00</instanceName>
+<solverInvoked>COIN-OR clp</solverInvoked>
+</general>
+<job>
+<timingInformation numberOfTimes="1">
+<time type="elapsedTime" unit="second" category="total">
+0</time>
+</timingInformation>
+</job>
+<optimization numberOfSolutions="1" numberOfVariables="20" numberOfConstraints="9" numberOfObjectives="1">
+<solution targetObjectiveIdx="-1">
+<status type="optimal">
+</status>
+<variables numberOfOtherVariableResults="1">
+<values numberOfVar="20">
+<var idx="0">.6526315789473685</var>
+<var idx="1">0</var>
+<var idx="2">3.4750279955207164</var>
+<var idx="3">3.8723404255319145</var>
+<var idx="4">1.75</var>
+<var idx="5">6.25</var>
+<var idx="6">0</var>
+<var idx="7">0</var>
+<var idx="8">0</var>
+<var idx="9">0</var>
+<var idx="10">10.615564305410059</var>
+<var idx="11">0</var>
+<var idx="12">0</var>
+<var idx="13">0</var>
+<var idx="14">0</var>
+<var idx="15">8</var>
+<var idx="16">8</var>
+<var idx="17">0</var>
+<var idx="18">0</var>
+<var idx="19">0</var>
+</values>
+<basisStatus>
+<basic numberOfEl="8"><el>0</el><el mult="4" incr="1">2</el><el>10</el><el>15</el><el>16</el></basic><atLower numberOfEl="12"><el>1</el><el mult="4" incr="1">6</el><el mult="4" incr="1">11</el><el mult="3" incr="1">17</el></atLower></basisStatus>
+<other numberOfVar="20" name="reduced costs" description="the variable reduced costs">
+<var idx="0">0</var>
+<var idx="1">.10865874363327666</var>
+<var idx="2">0</var>
+<var idx="3">0</var>
+<var idx="4">0</var>
+<var idx="5">0</var>
+<var idx="6">1.4714204867006253e-2</var>
+<var idx="7">4.193909619622149e-2</var>
+<var idx="8">8.319185059422762e-2</var>
+<var idx="9">.14091680814940577</var>
+<var idx="10">0</var>
+<var idx="11">.16609471516815377</var>
+<var idx="12">6.090380377849236e-2</var>
+<var idx="13">.10674421124878086</var>
+<var idx="14">5.467856325783582e-2</var>
+<var idx="15">0</var>
+<var idx="16">0</var>
+<var idx="17">.1578947368421052</var>
+<var idx="18">7.357102433503104e-2</var>
+<var idx="19">7.174077953978975e-2</var>
+</other>
+</variables>
+<objectives >
+<values numberOfObj="1">
+<obj idx="-1">42.61556430541006</obj>
+</values>
+</objectives>
+<constraints >
+<dualValues numberOfCon="9">
+<con idx="0">1.0186757215619693</con>
+<con idx="1">.9337860780984719</con>
+<con idx="2">1.075268817204301</con>
+<con idx="3">1.029512697323267</con>
+<con idx="4">3.2258064516129115e-2</con>
+<con idx="5">.10356536502546698</con>
+<con idx="6">0</con>
+<con idx="7">5.284831846259441e-2</con>
+<con idx="8">1.6977928692700761e-3</con>
+</dualValues>
+<basisStatus>
+<basic numberOfEl="1"><el>6</el></basic><atUpper numberOfEl="8"><el mult="6" incr="1">0</el><el>7</el><el>8</el></atUpper></basisStatus>
+</constraints>
+</solution>
+</optimization>
+</osrl>
