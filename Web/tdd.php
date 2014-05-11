@@ -197,7 +197,6 @@ foreach($workers as $w){
 	}
 }
 
-
 ?>
 </tr>
 </table>
