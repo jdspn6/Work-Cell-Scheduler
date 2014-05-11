@@ -123,6 +123,7 @@ foreach($suppliers as $s){
 <title>Decision Support Systems IMSE 7420 Final</title>
 </head>
 <body>
+<h3> J.D.Stumpf-------Jdspn6  </h3>
 <h1>Decision Support Systems IMSE 7420 Final (E1)</h1>
 <h2> Supply Data</h2>
 <table border='1'>
@@ -190,12 +191,13 @@ echo "--------------------------------------------------------------------------
 ?>
 <h2> OSIL OSRL Optimization Solution</h2>
 
-<P> Objective Function Value</P>
+<table border='1'>
+<tr><td>Objective Value</td></tr>
 <?php 
 $objvalue=$os->solve();
-echo $objvalue;
+echo "<tr><td>$objvalue</td><td>"
 ?>
-
+</table>
 <h2> Shipment Values</h2>
 <table border='1'>
 <tr><th></th>
@@ -209,15 +211,14 @@ echo "<th>$s\n";
 foreach($departments as $d){
 echo "<tr><th>$d</th>";
 foreach($suppliers as $s){
-echo "<td>".$a->getVariable("{$s}_{$d}")."</td>";
+echo "<td>".$os->getVariable("{$s}_{$d}")."</td>";
 echo "\n";
 }
 }
 ?>
 </table>
-
-
-
+<br>
+<a href="127.0.0.1:8000/Work-Cell-Scheduler/Web/">Back to Index Page</a> 
 </body>
 </html>
 

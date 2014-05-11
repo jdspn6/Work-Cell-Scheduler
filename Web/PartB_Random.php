@@ -6,6 +6,7 @@
 //------------------------------------------------------------------------------
 require_once 'Work-Cell-Scheduler/WCS/os.php';
 
+
 //Number of Stores and Suppliers 
 $numDepartments=rand(3,5);
 $numSuppliers=rand(3,5);
@@ -19,13 +20,13 @@ $demand=array();
 for($i=0;$i<$numDepartments;$i++){
 	$demand["D-$i"]=rand(150,300);
 }
-print_r($demand);
+//print_r($demand);
 
 $supply=array();
 for($i=0;$i<$numSuppliers;$i++){
 	$supply["S-$i"]=rand(200,600);
 }
-print_r($supply);
+//print_r($supply);
 
 //create Suppliers and departments Array
 $departments=array();
@@ -51,14 +52,14 @@ foreach($demand as $key=>$d){
 	$profit[$key]=rand(10,50);
 }
 
-print_r($profit);
+//print_r($profit);
 
 //create cost based off dVariable
 $cost=array();
 foreach($dvariable as $key=>$dv){
 	$cost[$dv]=rand(2,8);
 }
-print_r($cost);
+//print_r($cost);
 
 //Create Actual Profit Array
 
@@ -69,7 +70,7 @@ foreach($departments as $d){
 		$actualProfit1["{$s}_{$d}"]=$v-$cost["{$s}_{$d}"];
 	}
 }
-print_r($actualProfit1);
+//print_r($actualProfit1);
 
 
 
@@ -116,6 +117,7 @@ foreach($suppliers as $s){
 <title>Decision Support Systems IMSE 7420 Final</title>
 </head>
 <body>
+<h3> J.D.Stumpf-------Jdspn6  </h3>
 <h1>Decision Support Systems IMSE 7420 Final (E1)</h1>
 <h2> Supply Data</h2>
 <table border='1'>
@@ -176,21 +178,45 @@ foreach($actualProfit1 as $p){
 	}
 echo"</tr>";
 ?>
+
 </tr>
 </table>
-<h2> OSIL OSRL Optimization Solution</h2>
-<?php 
-echo"<br>";
-$objvalue=$os->solve();
-echo $objvalue;
+<?php
+echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 ?>
+<h2> OSIL OSRL Optimization Solution</h2>
+
+<table border='1'>
+<tr><td>Objective Value</td></tr>
+<?php 
+$objvalue=$os->solve();
+echo "<tr><td>$objvalue</td><td>"
+?>
+</table>
+
+<h2> Shipment Values</h2>
+
+<table border='1'>
+<tr><th></th>
+<?php
+foreach($suppliers as $s){
+echo "<th>$s\n";
+}
+?>
+</tr>
+<?php
+foreach($departments as $d){
+	echo "<tr><td>$d</td>";
+	foreach($suppliers as $s){
+		echo "<td>".$os->getVariable("{$s}_{$d}")."</td>";
+	}
+}
+?>
+</table>
+<br>
+<a href="127.0.0.1:8000/">Back to Index Page</a> 
 </body>
 </html>
-
-
-
-
-
 
 
 
