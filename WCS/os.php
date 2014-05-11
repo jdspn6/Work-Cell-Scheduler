@@ -7,9 +7,9 @@ class OS {
 	static $solver="\\WebIS\\bin\OSSolverService.exe";
 	static $tmp="\\WebIS\\tmp\\"; // trailing slash required.
 
-	private $osil=NULL;
-	private $osrl=NULL;
-	private $var=array(); // Reverse IDX mapping ($idx->$name).
+	public $osil=NULL;
+	public $osrl=NULL;
+	public $var=array(); // Reverse IDX mapping ($idx->$name).
 	public $value=NULL;  // Solution value.
 
 	private $linear=FALSE;
@@ -148,7 +148,7 @@ class OS {
 	}
 	
 	function getSolution(){
-		return (double)$solution->objectives->values->obj;
+		return (double)$this->solution->objectives->values->obj;
 	}
 	
 }

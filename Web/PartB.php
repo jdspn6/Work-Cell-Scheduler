@@ -31,8 +31,8 @@ for($i=0;$i<($numDepartments);$i++){
 for($i=0;$i<($numSuppliers);$i++){
 	$suppliers[]="S-$i";
 }
-print_r($departments);
-print_r($suppliers);
+//print_r($departments);
+//print_r($suppliers);
 
 //Supply and Demand Arrays
 $capacity=array(600,300,200);
@@ -47,8 +47,8 @@ foreach ($cost as $key => $value) {
 	$actualProfit[$key] = $profit[$key] - $cost[$key];
 }
 echo"\n";
-echo "ActualProfit";
-print_r($actualProfit);
+//echo "ActualProfit";
+//print_r($actualProfit);
 
 $actualProfit1=array();
 foreach($suppliers as $key=>$s){
@@ -56,23 +56,23 @@ foreach($suppliers as $key=>$s){
 		$actualProfit1["{$s}_{$d}"] = $actualProfit[$key];
 	}
 }
-print_r($actualProfit1);
+//print_r($actualProfit1);
 
 //Create Indexed Array for Supply Capacity
 $supplyVal=array();
 for($i=0;$i<($numSuppliers);$i++){
 	$supplyVal["S-$i"]=$capacity[$i];
 }
-echo "SupplyVal";
-print_r($supplyVal);
+//echo "SupplyVal";
+//print_r($supplyVal);
 
 //Created Indexed Array for Store Demand
 $demandVal=array();
 for($i=0;$i<($numDepartments);$i++){
 	$demandVal["D-$i"]=$demand[$i];
 }
-echo "demandVal";
-print_r($demandVal);
+//echo "demandVal";
+//print_r($demandVal);
 
 //Create Decision Variable
 $dvariable=array();
@@ -81,15 +81,7 @@ foreach($suppliers as $s){
 		$dvariable[]="{$s}_{$d}";
 	}
 }
-print_r($dvariable);
-
-echo"\n". "Try indexed array for profit";
-
-//$indexProfit=array();
-//foreach ($dvariable as $dv){
-//	$indexProfit[$dv]=0;
-//}
-//print_r($indexProfit);
+//print_r($dvariable);
 
 //--------------------------------------------------------------------------
 //Create OSIL file
@@ -98,10 +90,27 @@ $os=new WEBIS\OS;
 
 foreach($dvariable as $dv){
 	$v=$os->addVariable("$dv");
-	$os->addConstraintCoef("$dv", $actualProfit1[$dv]);
+	$os->addObjCoef("$dv", $actualProfit1[$dv]);
 }
-echo "Check variable";
-print_r($os);
+
+//Create Demand Constraints
+foreach($departments as $d){
+	$os->addConstraint(NULL,$demandVal[$d]);
+	foreach($suppliers as $s){
+		$os->addConstraintCoef("{$s}_{$d}",1);
+	}
+}
+
+//Create Supply Constraints
+
+foreach($suppliers as $s){
+	$os->addConstraint($supplyVal[$s],NULL);
+	foreach($departments as $d){
+		$os->addConstraintCoef("{$s}_{$d}",1);
+		}
+	}
+	//print_r($os);
+
 ?>
 
 <?php
@@ -126,7 +135,7 @@ echo"<tr><td>Supply</td>";
 foreach($supplyVal as $s){
 	echo"<td>$s</td>";
 	}
-echo"<tr>";
+echo"</tr>";
 ?>
 </tr>
 </table>
@@ -172,11 +181,43 @@ echo"<tr><td>Actual Profit</td>";
 foreach($actualProfit as $p){
 	echo"<td>$p</td>";
 	}
-echo"<tr>";
+echo"</tr>";
 ?>
 </tr>
 </table>
+<?php
+echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+?>
 <h2> OSIL OSRL Optimization Solution</h2>
+
+<P> Objective Function Value</P>
+<?php 
+$objvalue=$os->solve();
+echo $objvalue;
+?>
+
+<h2> Shipment Values</h2>
+<table border='1'>
+<tr><th></th>
+<?php
+foreach($suppliers as $s){
+echo "<th>$s\n";
+}
+?>
+</tr>
+<?php
+foreach($departments as $d){
+echo "<tr><th>$d</th>";
+foreach($suppliers as $s){
+echo "<td>".$a->getVariable("{$s}_{$d}")."</td>";
+echo "\n";
+}
+}
+?>
+</table>
+
+
+
 </body>
 </html>
 
