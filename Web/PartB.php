@@ -4,18 +4,6 @@
 // a) Model and solve the following problem as a linear program using PHP and os.php
 require_once 'Work-Cell-Scheduler/WCS/os.php';
 
-function assertEquals($expected,$result) {
-	if(!($expected===$result)){
-		$message="assertEquasl: |$expected|$result|\n";
-		throw new Exception($message);
-	}
-}
-function assertNotEquals($expected,$result) {
-	if(($expected===$result)){
-		$message="assertNoeEquals: |$expected|$result|\n";
-		throw new Exception($message);
-	}
-}
 //------------------------------------------------------------------------------
 //Number of Stores and Suppliers 
 $numDepartments=3;

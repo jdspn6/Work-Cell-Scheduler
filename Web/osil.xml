@@ -1,2 +1,92 @@
 <?xml version="1.0"?>
-<osil><instanceHeader><name>C1245-TANK-2 2014-05-11T23:09:08+02:00</name></instanceHeader><instanceData><variables numberOfVariables="9"><var name="S-0_D-0"/><var name="S-0_D-1"/><var name="S-0_D-2"/><var name="S-1_D-0"/><var name="S-1_D-1"/><var name="S-1_D-2"/><var name="S-2_D-0"/><var name="S-2_D-1"/><var name="S-2_D-2"/></variables><objectives><obj numberOfObjCoef="9" maxOrMin="min"><coef idx="0">18</coef><coef idx="1">27</coef><coef idx="2">37</coef><coef idx="3">18</coef><coef idx="4">27</coef><coef idx="5">37</coef><coef idx="6">18</coef><coef idx="7">27</coef><coef idx="8">37</coef></obj></objectives><constraints numberOfConstraints="6"><con lb="600"/><con lb="200"/><con lb="300"/><con ub="600"/><con ub="300"/><con ub="200"/></constraints><linearConstraintCoefficients numberOfValues="18"><start><el>0</el><el>3</el><el>6</el><el>9</el><el>12</el><el>15</el><el>18</el></start><colIdx><el>0</el><el>3</el><el>6</el><el>1</el><el>4</el><el>7</el><el>2</el><el>5</el><el>8</el><el>0</el><el>1</el><el>2</el><el>3</el><el>4</el><el>5</el><el>6</el><el>7</el><el>8</el></colIdx><value><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el><el>1</el></value></linearConstraintCoefficients></instanceData></osil>
+<osil>
+	<instanceHeader>
+		<name>C1245-TANK-2 2014-05-11T23:13:36+02:00</name>
+	</instanceHeader>
+	<instanceData>
+		<variables numberOfVariables="9">
+			<var name="S-0_D-0" />
+			<var name="S-0_D-1" />
+			<var name="S-0_D-2" />
+			<var name="S-1_D-0" />
+			<var name="S-1_D-1" />
+			<var name="S-1_D-2" />
+			<var name="S-2_D-0" />
+			<var name="S-2_D-1" />
+			<var name="S-2_D-2" />
+		</variables>
+		<objectives>
+			<obj numberOfObjCoef="9" maxOrMin="min">
+				<coef idx="0">18</coef>
+				<coef idx="1">27</coef>
+				<coef idx="2">37</coef>
+				<coef idx="3">18</coef>
+				<coef idx="4">27</coef>
+				<coef idx="5">37</coef>
+				<coef idx="6">18</coef>
+				<coef idx="7">27</coef>
+				<coef idx="8">37</coef>
+			</obj>
+		</objectives>
+		<constraints numberOfConstraints="6">
+			<con lb="600" />
+			<con lb="200" />
+			<con lb="300" />
+			<con ub="600" />
+			<con ub="300" />
+			<con ub="200" />
+		</constraints>
+		<linearConstraintCoefficients
+			numberOfValues="18">
+			<start>
+				<el>0</el>
+				<el>3</el>
+				<el>6</el>
+				<el>9</el>
+				<el>12</el>
+				<el>15</el>
+				<el>18</el>
+			</start>
+			<colIdx>
+				<el>0</el>
+				<el>3</el>
+				<el>6</el>
+				<el>1</el>
+				<el>4</el>
+				<el>7</el>
+				<el>2</el>
+				<el>5</el>
+				<el>8</el>
+				<el>0</el>
+				<el>1</el>
+				<el>2</el>
+				<el>3</el>
+				<el>4</el>
+				<el>5</el>
+				<el>6</el>
+				<el>7</el>
+				<el>8</el>
+			</colIdx>
+			<value>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+				<el>1</el>
+			</value>
+		</linearConstraintCoefficients>
+	</instanceData>
+</osil>

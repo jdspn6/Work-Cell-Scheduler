@@ -13,13 +13,13 @@ Build Date: Nov 16 2011
 SVN Version: 4392
 
 </serviceName>
-<instanceName>C1245-TANK-2 2014-05-11T23:09:08+02:00</instanceName>
+<instanceName>C1245-TANK-2 2014-05-11T23:13:36+02:00</instanceName>
 <solverInvoked>COIN-OR clp</solverInvoked>
 </general>
 <job>
 <timingInformation numberOfTimes="1">
 <time type="elapsedTime" unit="second" category="total">
-4.400000000000001e-2</time>
+4.300000000000001e-2</time>
 </timingInformation>
 </job>
 <optimization numberOfSolutions="1" numberOfVariables="9" numberOfConstraints="6" numberOfObjectives="1">
